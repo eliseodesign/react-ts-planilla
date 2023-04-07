@@ -1,7 +1,7 @@
 const NavBar = () => {
   return ( 
-    <nav>
-      <h2>GestorEmploy</h2>
+    <nav className="NavBar">
+      <h2>eliseodesign</h2>
 
     </nav>
    );

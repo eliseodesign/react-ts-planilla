@@ -1,0 +1,96 @@
+@use "../base/vars" as vars;
+
+body{
+  background: vars.$back;
+}
+.NavBar{
+  width: 100%;
+  position: fixed;
+  height: 60px;
+  background:vars.$color1;
+  padding: 1em;
+  h2{
+    color:vars.$primary; 
+    font-weight:400;
+    font-size:1.5em;
+    font-family:'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    line-height: 30px;
+  }
+}
+
+
+// Hero 
+
+.HeroMain{
+  height: calc(100vh - 60px);
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  padding:70px 1em;
+  width: 100%;
+  max-width: 1000px;
+  margin: auto;
+
+  .HeroInfo{
+    padding: 1em;
+    border-radius: 1em;
+    min-height: 50vh;
+    max-width: 600px;
+    p, h2{
+      color: #444;
+    }
+
+    svg{
+      margin: -70px 0;
+      height:100%;
+      width: 100%;
+    }
+
+    h1{
+      position: relative;
+      margin: .5em 0;
+      font-size: 2.6em;
+      font-family:'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+      color:vars.$primary;
+
+      &::after{
+        position: absolute;
+        content: "";
+        height: 7px;
+        width: 60px;
+        border-radius: 1em;
+        background: vars.$color1;
+        opacity: .9;
+        transform: translateX(-50px);
+        bottom:-2px;
+
+      }
+    }
+  }
+
+  .HeroOptions{
+    padding: 2em 3em;
+    display: grid;
+    place-content: center;
+
+    a{
+      color: vars.$color1;
+      font-weight: bold;
+      text-decoration: none;
+      opacity: .8;
+      margin: 0 0 1em 0;
+
+    }
+  }
+  
+}
+
+@media screen and (min-width:720px) {
+  .HeroMain{
+    flex-direction: row;
+
+    
+  }
+}
+
+
