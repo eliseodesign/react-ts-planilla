@@ -1,9 +1,12 @@
+import NavBar from "./components/Navbar";
+import Hero from "./components/Hero";
 
 const Landing = () => {
   return ( 
-    <main>
-      
-    </main>
+    <>
+      <NavBar />
+      <Hero />
+    </>
    );
 }
  
