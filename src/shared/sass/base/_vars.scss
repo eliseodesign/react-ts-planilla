@@ -1,0 +1,20 @@
+$primary:#00ADB5;
+$color1:#393E46;
+$color2:#222831;
+$back:#EEEEEE;
+
+body.darkmode{
+  $primary:#00ADB5;
+  $color1:#EEEEEE;
+  $color2:#222831;
+  $back:#393E46;
+}
+
+@function get-variables() {
+  @return (
+    $primary: #00ADB5,
+    $color1: #EEEEEE,
+    $color2: #222831,
+    $back: #393E46
+  );
+}

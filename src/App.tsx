@@ -1,12 +1,16 @@
-import { useState } from 'react'
+import { lazy } from 'react';
 
-import './App.css'
+const Routing = lazy(async () => await import('./view/routing'));
 
 function App() {
 
+  const currentUrl = window.location.pathname.split('/');
+  if (currentUrl.every(elem => elem === '')) window.location.assign("Home")
+
   return (
-    <div className="App">
-    </div>
+    <main className="App">
+      <Routing />
+    </main>
   )
 }
 
