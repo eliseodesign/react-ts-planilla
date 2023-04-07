@@ -1,0 +1,10 @@
+// base
+@import "./shared/sass/base/reset";
+@import "./shared/sass/base/typo";
+// utils
+@import "./shared/sass/utils/variables";
+@import "./shared/sass/utils/functions";
+// components
+@import "./shared/sass/components/main";
+// view
+@import "./shared/sass/views/landing";
