@@ -1,0 +1,48 @@
+@use "../base/vars" as vars;
+
+.app-header{
+
+  h1{
+    margin: 0;
+    color: vars.$primary;
+  }
+
+}
+
+.aplication{
+  padding: .6em;
+}
+
+table{
+  width: 100%;
+  background: vars.$color1;
+  border: 0px solid vars.$color2;
+
+  thead{
+    color: #555;
+    font-size: 1.1em;
+    background: #fff;
+    border: 0px solid vars.$back;
+    th{
+      padding:2px;
+      font-weight: bold;
+    }
+  }
+
+  tbody{
+    color: #eee;
+
+    td:is(:has(input[type="checkbox"])) {
+      display: grid;
+      place-items: center;
+      padding: .2em;
+
+    }
+    input[type="checkbox"]{
+      width: 20px;
+    }
+    
+  }
+}
+
+

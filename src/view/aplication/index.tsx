@@ -3,11 +3,10 @@ import Table from "./components/Table";
 
 const App = () => {
   return ( 
-    <main>
-      aplication
+    <div className="aplication">
       <Header />
       <Table />
-    </main> 
+    </div> 
   );
 }
  
