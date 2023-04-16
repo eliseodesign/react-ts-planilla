@@ -1,18 +1,19 @@
-import {Routes, Route} from "react-router-dom"
-import {lazy} from "react"
+import { Routes, Route } from "react-router-dom";
+import { lazy, Suspense } from "react"; // Actualizado: importa 'Suspense' desde 'react'
 
-const LandingView = lazy (async () => await import('./landing'))
-const App = lazy (async () => await import('./aplication'))
+const LandingView = lazy(async () => await import("./landing"));
+const App = lazy(async () => await import("./aplication"));
 
-const Routing = ():JSX.Element => {
-  return ( 
-    <>
+const Routing = () => {
+  return (
+    <Suspense fallback={<div>Loading...</div>}>
+      {/* Actualizado: envuelve el contenido de 'Routes' con 'Suspense' */}
       <Routes>
-        <Route path="/home" element={<LandingView />}></Route>
-        <Route path="/app" element={<App />}></Route>
+        <Route path="home" element={<LandingView />} />
+        <Route path="app" element={<App />} />
       </Routes>
-    </>
-   );
-}
- 
+    </Suspense>
+  );
+};
+
 export default Routing;
