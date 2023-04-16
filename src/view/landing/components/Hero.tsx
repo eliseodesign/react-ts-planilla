@@ -1,4 +1,5 @@
 import EmployeeSVG from "./EmployeeSVG"
+import { Link} from "react-router-dom"
 const Hero = () => {
   return ( 
     <main className="HeroMain">
@@ -14,7 +15,7 @@ const Hero = () => {
 
       <section className="HeroOptions">
         <a href="github.com/eliseodesign">create by @eliseodesign</a>
-        <button className="button-layer">Iniciar</button>
+        <Link to={"/app"} className="button-layer">Iniciar</Link>
        
       </section>
 
