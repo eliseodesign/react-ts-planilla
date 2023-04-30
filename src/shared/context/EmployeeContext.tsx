@@ -18,8 +18,18 @@ const EmployeContext = createContext<IEmployeeContext>({
 })
 
 // proveedor
-export const Provider: React.FC = ({ children }: React.PropsWithChildren<{}>) => {
-  const [employees, setEmployees] = useState<IEmployee[]>([])
+export const EmployeeProvider = ({ children }: React.PropsWithChildren<{}>) => {
+  const [employees, setEmployees] = useState<IEmployee[]>([{
+    id: 1,
+    nombre: "Eliseo",
+    salario: 12,
+    iss: 212,
+    afp: 212,
+    isr: 212,
+    descuento: 12,
+    sujeto: 212,
+  }])
+  
   const addEmployee = (e: IEmployee): boolean => {
     let ids = employees.map(el => el.id)
     e.id = Math.max(...ids) +1;
