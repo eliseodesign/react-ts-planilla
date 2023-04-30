@@ -1,0 +1,70 @@
+@use "../base/vars" as vars;
+
+.modal{
+  position: fixed;
+  display: grid;
+  place-content: center;
+  top: 0;
+  height: 100vh;
+  width: 100%;
+  background: #0000009c;
+
+  .modal__form{
+    display: grid;
+    width: 100%;
+    max-width: 600px;
+    background: vars.$color2;
+    padding: 2em;
+
+    h2{
+      color: vars.$primary;
+      margin: 0 0 20px 0;
+    }
+
+    label{
+      color:#888;
+    }
+    input{
+      padding: 5px;
+      border: none;
+      border-radius: 5px;
+      outline: none;
+      margin: 7px 0;
+    }
+  }
+
+  .modal__btns{
+    margin-top: 15px;
+    display: grid;
+    gap: 5px;
+    grid-template-columns: 1fr 1fr;
+
+    button{
+      border: none;
+      border-radius: 4px;
+      padding: 10px;
+      color: #eee;
+      cursor: pointer;
+
+      &.btn-cancelar{
+        background: rgb(231, 107, 126);
+
+        &:hover{
+          background: rgb(172, 59, 76);
+        }
+      }
+      
+      &.btn-guardar{
+        background: rgb(124, 230, 111);
+
+        &:hover{
+        background: rgb(88, 167, 77);
+
+        }
+      }
+
+
+
+    }
+  }
+}

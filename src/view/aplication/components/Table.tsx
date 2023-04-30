@@ -4,6 +4,7 @@ import EmployeContext from "../../../shared/context/EmployeeContext";
 const Table = () => {
 
   const { employees } = useContext(EmployeContext)
+  console.log(employees)
   return (
     <div>
       TABLA DE EMPLEADOS
@@ -27,7 +28,7 @@ const Table = () => {
         <tbody>
           {employees.map(el =>{
             return(
-              <tr>
+              <tr key={el.id}>
                 <td>
                   <input type="checkbox" />
                 </td>
