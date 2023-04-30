@@ -1,5 +1,6 @@
 import { createContext, useState } from "react";
 import IEmployee from "../interfaces/Employee"
+import calcularRenta from "../utils/CalcularIsr";
 
 // interface de contexto
 interface IEmployeeContext {
@@ -33,6 +34,12 @@ export const EmployeeProvider = ({ children }: React.PropsWithChildren<{}>) => {
   const addEmployee = (e: IEmployee): boolean => {
     let ids = employees.map(el => el.id)
     e.id = Math.max(...ids) +1;
+    e.iss = e.salario * 0.03;
+    e.afp = e.salario * 0.0725;
+    e.isr = calcularRenta(e.salario - (e.iss + e.afp));
+    e.descuento = e.iss + e.afp + e.isr;
+    e.sujeto = e.salario - e.descuento;
+  
     setEmployees([...employees, e]);
     return true;
   }
