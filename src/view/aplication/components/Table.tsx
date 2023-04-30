@@ -1,43 +1,52 @@
+import { useContext } from "react";
+import EmployeContext from "../../../shared/context/EmployeeContext";
+
 const Table = () => {
-  return ( 
+
+  const { employees } = useContext(EmployeContext)
+  return (
     <div>
       TABLA DE EMPLEADOS
 
       <table>
-          <thead>
-            <tr>
-              <th>*</th>
-              <th>N°</th>
-              <th>Nombre</th>
-              <th>Sueldo</th>
-              <th>ISSS</th>
-              <th>AFP</th>
-              <th>ISR</th>
-              <th>Total Retención</th>
-              <th>Sujeto</th>
-            </tr>
-            
-          </thead>
+        <thead>
+          <tr>
+            <th>*</th>
+            <th>ID</th>
+            <th>Nombre</th>
+            <th>Sueldo</th>
+            <th>ISSS</th>
+            <th>AFP</th>
+            <th>ISR</th>
+            <th>Total Retención</th>
+            <th>Sujeto</th>
+          </tr>
 
-          <tbody>
-            <tr>
-              <td>
-                <input type="checkbox" />
-              </td>
-              <td>0</td>
-              <td>Eliseo</td>
-              <td>440</td>
-              <td>49</td>
-              <td>30</td>
-              <td>10</td>
-              <td>70</td>
-              <td>380</td>
-            </tr>
-          </tbody>
+        </thead>
 
-        </table>
+        <tbody>
+          {employees.map(el =>{
+            return(
+              <tr>
+                <td>
+                  <input type="checkbox" />
+                </td>
+                <td>{el.id}</td>
+                <td>{el.nombre}</td>
+                <td>{el.salario}</td>
+                <td>{el.iss}</td>
+                <td>{el.afp}</td>
+                <td>{el.isr}</td>
+                <td>{el.descuento}</td>
+                <td>{el.sujeto}</td>
+              </tr>
+            )
+          })}
+        </tbody>
+
+      </table>
     </div>
-   );
+  );
 }
- 
+
 export default Table;
