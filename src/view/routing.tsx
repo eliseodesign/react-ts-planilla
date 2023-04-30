@@ -9,8 +9,8 @@ const Routing = () => {
     <Suspense fallback={<div>Loading...</div>}>
       {/* Actualizado: envuelve el contenido de 'Routes' con 'Suspense' */}
       <Routes>
-        <Route path="home" element={<LandingView />} />
-        <Route path="app" element={<Aplication />} />
+        <Route path="/" element={<LandingView />} />
+        <Route path="/app" element={<Aplication />} />
       </Routes>
     </Suspense>
   );
